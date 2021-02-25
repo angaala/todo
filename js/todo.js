@@ -12,6 +12,7 @@ function addTask() {
     if(field.value) {
         const newTask = createTask(field.value);
         list.append(newTask);
+        field.value = '';
     }
 }
 
