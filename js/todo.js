@@ -61,3 +61,9 @@ function deleteTask(e) {
     const task = inputBlock.parentElement;
     task.parentElement.removeChild(task);
 }
+
+document.querySelector('.field').addEventListener('keydown', function(e) {
+    if (e.keyCode === 13) {
+      addTask(this.value);
+    }
+  });
