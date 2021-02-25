@@ -22,7 +22,27 @@
     margin-top: 20px;
     padding: 10px;
     width: calc(25% - 49px);
+    opacity:0;
+    transition: 0.5s;
+    animation: show 0.3s 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.1s;
   }
+
+  @keyframes show{
+    0%{
+    opacity:0;
+    }
+    30% {
+    opacity:0.3;
+    }
+    50% {
+     opacity:0.5;
+     }
+    100% {
+    opacity:1;
+    }
+    }
 
   .add {
     background: linear-gradient(92.33deg, #1D479B 17.41%, #3345EB 100%);
@@ -60,10 +80,16 @@
     line-height: 40px;
     transition: .3s;
     color: #949494;
-    font-size: 14px;
+    font-size: 18px;
   }
   
-  .field:focus~.control__label {
+  .field:focus~.control__label,
+  .field:not(:focus):valid~.control__label {
     top: -10px;
-    font-size: 10px;
+    font-size: 12px;
+  }
+
+  .field:invalid, .field:required {
+      border: 1px solid #000;
+      box-shadow:none;
   }
