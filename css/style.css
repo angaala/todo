@@ -7,6 +7,11 @@
     list-style: none;
   }
 
+.tasks-block {
+    width: 97%;
+    margin: 0 auto;
+}
+
 .list {
     display: flex;
     flex-flow: row wrap;
@@ -18,10 +23,10 @@
   
   .list-item {
     background: rgba(29, 71, 155, 0.31);
-    margin-left: 20px;
-    margin-top: 20px;
-    padding: 10px;
-    width: calc(25% - 49px);
+    margin: 0.8%;
+    padding: 0.7%;
+    flex-basis: 22%;
+    flex-grow: 0;
     opacity:0;
     transition: 0.5s;
     animation: show 0.3s 1;
