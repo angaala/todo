@@ -1,0 +1,69 @@
+.control {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 10px auto;
+    list-style: none;
+  }
+
+.list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 10px auto;
+    list-style: none;
+  }
+  
+  .list-item {
+    background: rgba(29, 71, 155, 0.31);
+    margin-left: 20px;
+    margin-top: 20px;
+    padding: 10px;
+    width: calc(25% - 49px);
+  }
+
+  .add {
+    background: linear-gradient(92.33deg, #1D479B 17.41%, #3345EB 100%);
+    box-shadow: 0px 5px 15px #1D479B;
+    color: #fff;
+    padding: 10px 90px;
+    font-size: 25px;
+    margin-left: 25px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+
+  .field {
+    padding: 18px;
+    width: 300px;
+}
+
+  .control__item {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+  }
+  
+  
+  .control__label {
+    position: absolute;
+    pointer-events: none;
+    left: 15px;
+    right: 15px;
+    top: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    line-height: 40px;
+    transition: .3s;
+    color: #949494;
+    font-size: 14px;
+  }
+  
+  .field:focus~.control__label {
+    top: -10px;
+    font-size: 10px;
+  }

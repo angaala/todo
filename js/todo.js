@@ -5,6 +5,7 @@ const list = document.querySelector('.list');
 function createTask(value) {
     task = document.createElement('div');
     task.textContent = value;
+    task.className  = 'list-item';
     return task;
 }
 
