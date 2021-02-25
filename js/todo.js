@@ -1,3 +1,5 @@
+'use strict';
+
 const field = document.querySelector('.field');
 const button = document.querySelector('.add');
 const list = document.querySelector('.list');
