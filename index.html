@@ -4,15 +4,15 @@
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"/>
- <link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/tools/css/reset/reset.css"/>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
  <link rel="stylesheet" href="css/style.css">
  <title>TODO</title>
 </head>
 <body>
  <div class="control-block">
    <div class="control">
-     <span class="control__item"><input class="field" id="field" type="text" required="required"><label for="field" class="control__label">Введи задачу</label></span>
-     <button class="add" type="button">+</button>
+        <input type="text" class="form-control field" placeholder="Введите задачу">
+        <button class="btn btn-primary add">+</button>
    </div>
  </div>
  <div class="tasks-block">
