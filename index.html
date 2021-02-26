@@ -12,10 +12,15 @@
    <div class="control">
         <input type="text" class="form-control field" placeholder="Введите задачу">
         <button class="btn btn-primary add">+</button>
+        <select class="form-control filter">
+          <option value="task">Все задачи</option>
+          <option value="non-success">Только невыполненные</option>
+          <option value="success">Только выполненные</option>
+        </select>
    </div>
  </div>
  <div class="tasks-block">
-    <div class="list"></div>
+    <div class="tasks"></div>
  </div>
  <script src="js/todo.js"></script>
 </body>

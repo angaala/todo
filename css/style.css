@@ -12,7 +12,7 @@
     margin: 0 auto;
 }
 
-.list {
+.tasks {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
@@ -21,7 +21,7 @@
     list-style: none;
   }
   
-  .list-item {
+  .task {
     background: rgba(29, 71, 155, 0.31);
     margin: 0.8%;
     padding: 0.7%;
@@ -54,7 +54,8 @@
 
   .add {
     color: #fff;
-    padding: 10px 90px;
+    padding: 15px;
+    width: 10%;
     font-size: 25px;
     border: none;
     cursor: pointer;
@@ -62,10 +63,21 @@
     margin-left: 5px;
   }
 
+  .filter, .filter:focus {
+    width: 25%;
+    text-align: center;
+    margin-left: 5px;
+    background:rgba(29, 71, 155, 0.31);
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+  }
 
   .field {
     padding: 18px;
-    width: 300px;
+    width: 25%;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    text-align: center;
 }
 
 .delete {
@@ -77,6 +89,6 @@
     height: 2em;
 }
 
-.completed {
+.success {
     text-decoration: line-through;
 }
