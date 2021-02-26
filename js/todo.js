@@ -45,7 +45,7 @@ function addTask() {
         const newTask = createTask(field.value);
         tasksList.append(newTask);
         field.value = '';
-        SaveTasks();
+        saveTasks();
     }
 }
 
@@ -61,14 +61,14 @@ function completeTask(e) {
         task.classList.remove('non-success');
         if(filter.value == 'non-success')task.style.display = 'none';
     }
-    SaveTasks();    
+    saveTasks();    
 }
 
 function deleteTask(e) {
     const inputBlock = e.target.parentElement;
     const task = inputBlock.parentElement;
     task.parentElement.removeChild(task);
-    SaveTasks();
+    saveTasks();
 }
 
 function filterTasks(e) {
@@ -82,7 +82,7 @@ function filterTasks(e) {
     });
 }
 
-function SaveTasks() {
+function saveTasks() {
     const tasks = document.querySelectorAll('.task');
     const tasksData = [...tasks].map(function(task, index) {
         return {"id": index, "text" : task.textContent, "status": task.querySelector('.status').checked};
@@ -91,15 +91,31 @@ function SaveTasks() {
     localStorage.setItem('tasks', JSON.stringify(tasksData));
 }
 
+function loadTasks() {
+    const tasks = JSON.parse(localStorage.getItem('tasks'));
+
+    tasks.forEach(function(task) {
+        const newTask = createTask(task.text);
+        if(task.status) {
+            newTask.classList.add('success');
+            newTask.classList.remove('non-success');
+            newTask.querySelector('.status').checked = true;
+        }
+        tasksList.append(newTask);
+    });
+}
+
 document.querySelector('.field').addEventListener('keydown', function(e) {
     if (e.keyCode === 13) {
       addTask(this.value);
     }
   });
 
+  field.value = '';
+  filter.selectedIndex = 0;
+
   button.addEventListener("click", addTask);
 
   filter.addEventListener("change", filterTasks);
 
-  field.value = '';
-  filter.selectedIndex = 0;
+  document.addEventListener("DOMContentLoaded", loadTasks);
