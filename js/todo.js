@@ -84,7 +84,7 @@ function filterTasks(e) {
 
 function saveTasks() {
     const tasks = document.querySelectorAll('.task');
-    const tasksData = [...tasks].map(function(task, index) {
+    const tasksData = Array.from(tasks).map(function(task, index) {
         return {"id": index, "text" : task.textContent, "status": task.querySelector('.status').checked};
     });
 
