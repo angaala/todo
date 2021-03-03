@@ -26,14 +26,14 @@ function createTask(value) {
     deleteButton.classList.add('btn', 'btn-primary', 'delete');
     deleteButton.value = '×';
 
-    inputBlock.appendChild(checkbox);
-    inputBlock.appendChild(deleteButton);
+    inputBlock.append(checkbox);
+    inputBlock.append(deleteButton);
 
     checkbox.addEventListener("click", completeTask);
     deleteButton.addEventListener("click", deleteTask);
 
-    task.appendChild(taskText);
-    task.appendChild(inputBlock);
+    task.append(taskText);
+    task.append(inputBlock);
 
     if(filter.value == 'success')task.style.display = 'none';
 
